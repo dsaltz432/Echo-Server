@@ -21,7 +21,7 @@ import java.net.UnknownHostException;
 
 public class Server {
 	
-	public static void main(String[] args) throws UnknownHostException, IOException {
+	public static void main(String[] args) {
 		
 		// receives a port number as argument
 		if (args.length != 1){
@@ -54,10 +54,10 @@ public class Server {
 				connectionSocket.close();
 				
 			}	
-		} catch (IOException e) {
-			e.printStackTrace();
 		} catch (NumberFormatException e){
 			System.out.println("You did not enter a valid port number");
+		} catch (IOException e) {
+			e.printStackTrace();
 		} finally {
 			if (serverSocket != null){
 				try {  
