@@ -8,7 +8,7 @@ This project creates a basic echo server. The Client class sends a request to th
 
 <hr>
 
-## Running the Project
+## Running the Project Locally
 
 1. Compile the two Java classes
 	* `javac Server.java`<br>
@@ -20,3 +20,12 @@ This project creates a basic echo server. The Client class sends a request to th
 
 
 Please Note: The port specified when starting the client and server must match in order to create a successful connection. 
+
+
+## Running the Project Through Docker
+
+1. Start the containers using `docker-compose up`
+2. Inside another terminal session, go into the "client" container:
+    * See available container: `docker ps`
+    * Enter the client container: `docker exec -it <client-pod-name> /bin/bash`
+3. Once inside a bash shell inside the client container, run the Client.java program as usual.

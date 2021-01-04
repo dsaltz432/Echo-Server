@@ -1,0 +1,19 @@
+version: "3"
+services:
+  client:
+    build: client/
+    command: java Client 8080
+    ports:
+      - 8080:8080
+    network_mode: host
+    depends_on:
+      - server
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+  server:
+    build: server/
+    command: java Server 8080
+    ports:
+      - 8080:8080
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
